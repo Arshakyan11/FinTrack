@@ -1,0 +1,44 @@
+@use "../../styles/globalIndex.scss" as *;
+
+.form_eachInput {
+  fieldset {
+    border-radius: 8px;
+    border-color: #dadada;
+    position: relative;
+    input {
+      @include inputStyles();
+    }
+    // .registration_calendarIcon {
+    //   position: absolute;
+    //   right: 3.2%;
+    //   top: 44%;
+    //   transform: translateY(-44%);
+    //   background: none;
+    //   border: none;
+    //   cursor: pointer;
+    //   font-size: 18px;
+    // }
+    // .registration_hiddenCalendar {
+    //   position: absolute;
+    //   opacity: 0;
+    // }
+    legend {
+      @include fielset_legend();
+    }
+    .registration_seePasswordIcon {
+      @include fieldset_seePasswordIcon();
+    }
+  }
+  &.wrongError {
+    fieldset {
+      border-color: #ff4242;
+    }
+  }
+  @media screen and (max-width: 965px) {
+    fieldset {
+      legend {
+        font-size: 13px;
+      }
+    }
+  }
+}

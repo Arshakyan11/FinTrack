@@ -1,0 +1,72 @@
+@use "../../styles/globalIndex.scss" as *;
+.reg {
+  .container {
+    max-width: 1440px;
+    margin: auto;
+    padding: 20px;
+    .reg_content {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      .reg_left {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 550px;
+        width: 100%;
+        .reg_titles {
+          @include displayFlex_col(10px);
+          .reg_title {
+            font-weight: bold;
+            font-size: 20px;
+          }
+          .reg_subTitle {
+            color: gray;
+          }
+        }
+        form {
+          @include displayFlex_col(10px);
+          button {
+            padding: 10px 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+          }
+          button[type="submit"] {
+            background: #c5d9d0;
+          }
+          button[type="reset"] {
+            background: #aaaaaa;
+          }
+        }
+      }
+      .reg_right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        max-width: 500px;
+        width: 100%;
+        background: #f3fcf8;
+        padding: 20px;
+        border-radius: 10px;
+        img {
+          height: 600px;
+        }
+        .reg_right_titles {
+          @include displayFlex_col(10px);
+          max-width: 200px;
+          width: 100%;
+          .reg_rightTitle {
+            font-size: 30px;
+            font-weight: bold;
+          }
+          .reg_rightSubTitle {
+            color: #606161;
+          }
+        }
+      }
+    }
+  }
+}

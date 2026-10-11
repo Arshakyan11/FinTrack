@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router";
-import styles from "./App.scss";
+import "./App.scss";
 import LayOut from "./LayOut/LayOut";
 import Login from "./pages/Login/Login";
 import Registration from "./pages/Registration/Registration";
