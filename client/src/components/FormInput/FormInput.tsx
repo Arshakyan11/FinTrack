@@ -1,11 +1,9 @@
 import styles from "./FormInput.module.scss";
-import FormHelperText from "../FormHelperText/FormHelperText";
 import type { FieldError, UseFormRegisterReturn } from "react-hook-form";
 
 type FormInputType = {
   label: string;
   placeholder: string;
-  hint: string;
   type?: string;
   errors: FieldError | undefined;
   register: UseFormRegisterReturn;
@@ -16,7 +14,6 @@ type FormInputType = {
 const FormInput = ({
   label,
   placeholder,
-  hint,
   type = "text",
   register,
   errors,
@@ -39,7 +36,7 @@ const FormInput = ({
         />
         <legend>{label}</legend>
       </fieldset>
-      <FormHelperText error={errors?.message} hint={hint} />
+      <p>{errors?.message}</p>
     </div>
   );
 };

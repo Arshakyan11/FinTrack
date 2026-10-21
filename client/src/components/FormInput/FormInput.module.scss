@@ -8,26 +8,17 @@
     input {
       @include inputStyles();
     }
-    // .registration_calendarIcon {
-    //   position: absolute;
-    //   right: 3.2%;
-    //   top: 44%;
-    //   transform: translateY(-44%);
-    //   background: none;
-    //   border: none;
-    //   cursor: pointer;
-    //   font-size: 18px;
-    // }
-    // .registration_hiddenCalendar {
-    //   position: absolute;
-    //   opacity: 0;
-    // }
     legend {
       @include fielset_legend();
     }
     .registration_seePasswordIcon {
       @include fieldset_seePasswordIcon();
     }
+  }
+  p {
+    color: red;
+    padding: 5px;
+    font-size: 13px;
   }
   &.wrongError {
     fieldset {

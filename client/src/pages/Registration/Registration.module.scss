@@ -1,13 +1,20 @@
 @use "../../styles/globalIndex.scss" as *;
 .reg {
+  // background: #ebf9f5;
   .container {
     max-width: 1440px;
     margin: auto;
     padding: 20px;
     .reg_content {
+      background: white;
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-between;
       align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 10px;
+      padding-left: 30px;
+      border-radius: 18px;
       .reg_left {
         display: flex;
         flex-direction: column;
@@ -16,28 +23,36 @@
         width: 100%;
         .reg_titles {
           @include displayFlex_col(10px);
+          font-weight: bold;
           .reg_title {
-            font-weight: bold;
-            font-size: 20px;
+            font-size: 25px;
           }
           .reg_subTitle {
-            color: gray;
+            color: #7f9e85;
           }
         }
         form {
-          @include displayFlex_col(10px);
+          @include displayFlex_col(14px);
           button {
-            padding: 10px 40px;
+            padding: 12px 40px;
             border: none;
             border-radius: 10px;
-            font-size: 20px;
+            font-size: 17px;
             cursor: pointer;
           }
           button[type="submit"] {
-            background: #c5d9d0;
+            background: #2a7a3b;
+            color: white;
           }
-          button[type="reset"] {
-            background: #aaaaaa;
+        }
+        .reg_haveAccountBox {
+          @include disFlex(10px);
+          font-size: 16px;
+          p {
+            color: #7a9c88;
+          }
+          a {
+            color: #2a7a3b;
           }
         }
       }
@@ -46,24 +61,32 @@
         flex-direction: column;
         align-items: center;
         gap: 10px;
-        max-width: 500px;
+        max-width: 450px;
         width: 100%;
         background: #f3fcf8;
         padding: 20px;
+        padding-bottom: 40px;
         border-radius: 10px;
         img {
-          height: 600px;
+          height: 480px;
+          width: 100%;
+          max-width: 430px;
+          object-fit: contain;
         }
         .reg_right_titles {
           @include displayFlex_col(10px);
-          max-width: 200px;
+          max-width: 400px;
           width: 100%;
           .reg_rightTitle {
-            font-size: 30px;
-            font-weight: bold;
+            font-size: 25px;
+            font-weight: 700;
+            line-height: 1.2;
+            text-wrap: balance;
           }
           .reg_rightSubTitle {
             color: #606161;
+            line-height: 1.5;
+            font-size: 14px;
           }
         }
       }

@@ -6,6 +6,8 @@ import FormInput from "../../components/FormInput/FormInput";
 import { fintrackRegister } from "../../assets/images";
 import SiteLogo from "../../components/SiteLogo/SiteLogo";
 import { useEffect } from "react";
+import { Link } from "react-router";
+import { ROUTES } from "../../routes/Route";
 const Registration = () => {
   const {
     register,
@@ -43,19 +45,11 @@ const Registration = () => {
               <FormInput
                 label="Name"
                 placeholder="Enter Your Name"
-                register={register("firstName")}
-                errors={errors.firstName}
+                register={register("fullName")}
+                errors={errors.fullName}
                 additionalClassName={styles.reg_eachInputSending}
-                hint="John"
               />
-              <FormInput
-                register={register("lastName")}
-                placeholder="Enter Your LastName"
-                label="LastName"
-                errors={errors.lastName}
-                additionalClassName={styles.reg_eachInputSending}
-                hint="Smith"
-              />
+
               <FormInput
                 register={register("email")}
                 placeholder="Enter Your Email"
@@ -63,16 +57,6 @@ const Registration = () => {
                 type="email"
                 errors={errors.email}
                 additionalClassName={styles.reg_eachInputSending}
-                hint="e.g. username@domain.com"
-              />
-              <FormInput
-                register={register("phoneNumber")}
-                placeholder="Enter Your Phone"
-                label="Phone"
-                type=""
-                errors={errors.phoneNumber}
-                additionalClassName={styles.reg_eachInputSending}
-                hint="+37477112233"
               />
               <FormInput
                 register={register("password")}
@@ -81,7 +65,6 @@ const Registration = () => {
                 type="password"
                 errors={errors.password}
                 additionalClassName={styles.reg_eachInputSending}
-                hint="ABCDE123a"
               />
               <FormInput
                 register={register("confirmPassword")}
@@ -90,11 +73,13 @@ const Registration = () => {
                 type="password"
                 errors={errors.password}
                 additionalClassName={styles.reg_eachInputSending}
-                hint="ABCDE123a"
               />
-              <button type="submit">Submit</button>
-              <button type="reset">Reset</button>
+              <button type="submit">Create Account</button>
             </form>
+            <div className={styles.reg_haveAccountBox}>
+              <p>Already have an account?</p>
+              <Link to={ROUTES.LOGIN}>Sign In</Link>
+            </div>
           </div>
           <div className={styles.reg_right}>
             <img src={fintrackRegister} alt="reg_img" />

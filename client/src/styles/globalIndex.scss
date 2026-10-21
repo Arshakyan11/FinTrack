@@ -1,2 +1,11 @@
 @forward "mixin";
 @forward "globalVariables";
+
+html,
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-family);
+}
