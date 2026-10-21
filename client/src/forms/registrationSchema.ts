@@ -1,7 +1,7 @@
 import z from "zod";
 import { forEmailValidation, forPasswordValidation } from "./global_schema";
 
-export const reegistrationValidation = z
+export const registrationValidation = z
   .object({
     fullName: z
       .string()

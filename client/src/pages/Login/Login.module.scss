@@ -1,0 +1,77 @@
+@use "../../styles/globalIndex.scss" as *;
+
+.login {
+  .container {
+    max-width: 1440px;
+    margin: auto;
+    padding: 20px;
+    .login_content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      max-width: 1200px;
+      background: white;
+      margin: auto;
+      padding: 20px;
+      padding-left: 40px;
+      border-radius: 18px;
+      .login_content_left {
+        @include displayFlex_col(10px);
+        max-width: 550px;
+        width: 100%;
+        .left_titles {
+          @include displayFlex_col(10px);
+          .left_titles_mainTitle {
+            font-size: 25px;
+          }
+          .left_titles_subTitle {
+            color: #7f9e85;
+          }
+        }
+        form {
+          @include displayFlex_col(14px);
+          button {
+            @include mainButton_styles();
+          }
+        }
+        .left_createAccount_box {
+          @include disFlex(10px);
+          font-size: 16px;
+          p {
+            color: #7a9c88;
+          }
+          a {
+            color: #2a7a3b;
+          }
+        }
+      }
+      .login_content_right {
+        position: relative;
+        max-width: 430px;
+        width: 100%;
+        img {
+          height: 590px;
+          width: 100%;
+          border-radius: 40px;
+          object-fit: contain;
+        }
+        .right_text_box {
+          max-width: 230px;
+          @include displayFlex_col(10px);
+          position: absolute;
+          bottom: 15%;
+          left: 10%;
+          color: white;
+          .right_text_title {
+            font-size: 30px;
+          }
+          .right_text_subTitle {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+    

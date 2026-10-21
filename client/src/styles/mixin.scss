@@ -38,3 +38,13 @@
   font-size: 24px;
   cursor: pointer;
 }
+
+@mixin mainButton_styles {
+  padding: 12px 40px;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  cursor: pointer;
+  background: #2a7a3b;
+  color: white;
+}

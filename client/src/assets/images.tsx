@@ -1,2 +1,3 @@
 import fintrackRegister from "./fintrackRegister.png";
-export { fintrackRegister };
+import fintrackLogin from ".//fintrackLogin.png";
+export { fintrackRegister, fintrackLogin };

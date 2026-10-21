@@ -1,7 +1,7 @@
 import { useForm, useWatch } from "react-hook-form";
 import styles from "./Registration.module.scss";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { reegistrationValidation } from "../../forms/registrationSchema";
+import { registrationValidation } from "../../forms/registrationSchema";
 import FormInput from "../../components/FormInput/FormInput";
 import { fintrackRegister } from "../../assets/images";
 import SiteLogo from "../../components/SiteLogo/SiteLogo";
@@ -16,7 +16,7 @@ const Registration = () => {
     trigger,
     formState: { errors, touchedFields },
   } = useForm({
-    resolver: zodResolver(reegistrationValidation),
+    resolver: zodResolver(registrationValidation),
     mode: "onChange",
     reValidateMode: "onChange",
   });
@@ -44,7 +44,7 @@ const Registration = () => {
             <form onSubmit={handleSubmit(onsubmit)}>
               <FormInput
                 label="Name"
-                placeholder="Enter Your Name"
+                placeholder="Enter Your FullName"
                 register={register("fullName")}
                 errors={errors.fullName}
                 additionalClassName={styles.reg_eachInputSending}

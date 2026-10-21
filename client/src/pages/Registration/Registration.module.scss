@@ -16,9 +16,7 @@
       padding-left: 30px;
       border-radius: 18px;
       .reg_left {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+        @include displayFlex_col(10px);
         max-width: 550px;
         width: 100%;
         .reg_titles {
@@ -34,15 +32,7 @@
         form {
           @include displayFlex_col(14px);
           button {
-            padding: 12px 40px;
-            border: none;
-            border-radius: 10px;
-            font-size: 17px;
-            cursor: pointer;
-          }
-          button[type="submit"] {
-            background: #2a7a3b;
-            color: white;
+            @include mainButton_styles();
           }
         }
         .reg_haveAccountBox {
