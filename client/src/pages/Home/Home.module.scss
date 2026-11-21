@@ -1,0 +1,319 @@
+@use "../../styles/globalIndex.scss" as *;
+.homeSec {
+  .container {
+    max-width: 1440px;
+    margin: auto;
+    .home {
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .headerLeft {
+          @include displayFlex_col(20px);
+          padding: 20px;
+          max-width: 600px;
+          .headerMainTitle {
+            @include mainTitleStyles();
+            max-width: 270px;
+            text-align: center;
+          }
+          .titleBox {
+            @include displayFlex_col(0px);
+            font-size: 25px;
+            font-weight: bold;
+            .titleAccent {
+              color: #109450;
+            }
+          }
+          .headerMainText {
+            color: gray;
+            font-size: 13px;
+          }
+          .headerButtons {
+            display: flex;
+            gap: 10px;
+            a {
+              padding: 10px 15px;
+              border-radius: 10px;
+              &.buttonGetStarted {
+                color: white;
+                background: #038945;
+              }
+              &.buttonExploreFeatures {
+                background: white;
+                border: 1px solid gray;
+              }
+            }
+          }
+          .header_skiils {
+            @include disFlex(35px);
+            justify-content: flex-start;
+            .skillsEachSkills {
+              @include disFlex(5px);
+              color: rgb(57, 57, 57);
+
+              .eachSkilIcon {
+                background: #e7fce6;
+                border-radius: 50%;
+                padding: 3px 6px;
+                color: #0a3810;
+              }
+            }
+          }
+        }
+        .headerRight {
+          max-width: 700px;
+          img {
+            width: 100%;
+          }
+        }
+      }
+      .features {
+        background: #ebf9f5;
+        padding: 20px 10px;
+        @include displayFlex_col(20px);
+        .featuresTitles {
+          @include displayFlex_col(10px);
+          align-items: center;
+          .titleTop {
+            @include mainTitleStyles();
+          }
+          .titleMiddle {
+            font-size: 25px;
+            font-weight: bold;
+            span {
+              color: #109450;
+            }
+          }
+          .titleBottom {
+            color: rgb(57, 57, 57);
+          }
+        }
+        .featuresAll {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 16px;
+          .featuresEach {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            padding: 20px 24px;
+            min-height: 135px;
+            background: white;
+            border-radius: 18px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            .eachLeft {
+              @include disFlex();
+              flex-shrink: 0;
+              width: 84px;
+              height: 80px;
+              color: #16a34a;
+              background: #e7fce6;
+              border-radius: 20px;
+            }
+            .eachRight {
+              flex: 1;
+              .eachTitle {
+                font-weight: bold;
+                margin-bottom: 8px;
+                font-size: 18px;
+              }
+              .eachText {
+                color: rgb(57, 57, 57);
+
+                font-size: 13px;
+              }
+            }
+          }
+        }
+      }
+      .steps {
+        display: flex;
+        padding: 25px 10px;
+        justify-content: center;
+        gap: 35px;
+        .stepsInfo {
+          max-width: 730px;
+          display: flex;
+          align-items: center;
+          border-right: 1px solid gray;
+          padding-right: 25px;
+          img {
+            width: 300px;
+          }
+          .stepsInfoText {
+            @include displayFlex_col(15px);
+            align-items: flex-start;
+            .topTitle {
+              @include mainTitleStyles();
+            }
+            .middleTitle {
+              font-size: 23px;
+              font-weight: bold;
+            }
+            .bottomTitle {
+              color: rgb(57, 57, 57);
+            }
+          }
+        }
+        .stepsAll {
+          position: relative;
+          width: 100%;
+          max-width: 480px;
+          display: flex;
+          flex-direction: column;
+          &::before {
+            content: "";
+            position: absolute;
+            left: 28px;
+            top: 44px;
+            bottom: 44px;
+            width: 2px;
+            background: #16a34a;
+          }
+          .eachStep {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex: 0 0 70px;
+            .stepNumberBox {
+              background: #e7fce6;
+              width: 56px;
+              height: 56px;
+              text-align: center;
+              @include disFlex();
+              border-radius: 50%;
+              flex-shrink: 0;
+              z-index: 1;
+              position: relative;
+            }
+            .stepNumber {
+              color: #08752f;
+              font-size: 23px;
+              font-weight: bold;
+            }
+            .eachStepInfo {
+              @include displayFlex_col(4px);
+              justify-content: center;
+              flex: 1;
+              height: 100%;
+              .stepTitle {
+                font-weight: bold;
+                font-size: 18px;
+              }
+              .stepDesc {
+                color: rgb(57, 57, 57);
+
+                font-size: 13px;
+              }
+            }
+            &:not(:last-child) {
+              .eachStepInfo {
+                border-bottom: 1px solid gray;
+              }
+            }
+          }
+        }
+      }
+      .dashView {
+        background: #ebf9f5;
+        @include disFlex(30px);
+        .dashContent {
+          @include displayFlex_col(10px);
+          align-items: flex-start;
+          max-width: 400px;
+          width: 100%;
+          .title {
+            @include mainTitleStyles();
+          }
+          .descOne {
+            font-weight: bold;
+            font-size: 24px;
+            span {
+              color: #109450;
+            }
+          }
+          .descTwo {
+            color: rgb(57, 57, 57);
+          }
+          ul {
+            @include displayFlex_col(10px);
+            li {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              .checkIcon {
+                @include disFlex();
+                flex-shrink: 0;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background: #109450;
+                color: white;
+              }
+              .previewText {
+                font-weight: 700;
+              }
+            }
+          }
+        }
+        img {
+          max-width: 700px;
+          width: 100%;
+        }
+      }
+      .benefits {
+        @include displayFlex_col(10px);
+        padding: 25px 10px;
+        .benefitsTitles {
+          @include displayFlex_col(4px);
+          align-items: center;
+          .mainTItle {
+            font-weight: bold;
+            font-size: 24px;
+            span {
+              color: #109450;
+            }
+          }
+          .benefitsDesc {
+            color: rgb(57, 57, 57);
+          }
+        }
+        .benefitstems {
+          display: grid;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          margin: 20px auto 0;
+          .eachBenefit {
+            @include displayFlex_col(8px);
+            align-items: flex-start;
+            padding: 0 35px;
+
+            &:not(:last-child) {
+              border-right: 1px solid gray;
+            }
+            .benefitIcon {
+              width: 56px;
+              height: 56px;
+              flex-shrink: 0;
+              @include disFlex();
+              color: #16a34a;
+              border-radius: 20px;
+              background: #e7fce6;
+            }
+            .eachBenefitInfo {
+              @include displayFlex_col(4px);
+              .benefitTitle {
+                font-weight: bold;
+                font-size: 18px;
+              }
+              .benefitdesc {
+                color: rgb(57, 57, 57);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

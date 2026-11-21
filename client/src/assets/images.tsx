@@ -1,3 +1,12 @@
 import fintrackRegister from "./fintrackRegister.png";
 import fintrackLogin from ".//fintrackLogin.png";
-export { fintrackRegister, fintrackLogin };
+import FintrackDashImg from "./dashboard.png";
+import FintrackStepsImg from "./steps.png";
+import FintrackSecondDash from "./secondDash.png";
+export {
+  fintrackRegister,
+  fintrackLogin,
+  FintrackDashImg,
+  FintrackStepsImg,
+  FintrackSecondDash,
+};
