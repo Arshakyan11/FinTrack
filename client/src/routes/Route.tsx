@@ -4,4 +4,5 @@ export const ROUTES = {
   REGISTRATION: "registration",
   DASHBOARD: "dashbaord",
   NOTFOUND: "*",
+  FAQ: "/faq",
 } as const;

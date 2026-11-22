@@ -13,6 +13,7 @@ const NavBar = () => {
           <div className="nav_middle">
             <NavLink to={ROUTES.HOME}>Home</NavLink>
             <NavLink to={ROUTES.DASHBOARD}>Dashboard</NavLink>
+            <NavLink to={ROUTES.FAQ}>FAQ</NavLink>
           </div>
           <div className="nav_right">
             <Link to={ROUTES.LOGIN} className="nav_right_signIn">

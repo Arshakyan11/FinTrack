@@ -19,27 +19,35 @@
           }
           .titleBox {
             @include displayFlex_col(0px);
-            font-size: 25px;
             font-weight: bold;
             .titleAccent {
               color: #109450;
             }
+            h1,
+            .titleAccent {
+              font-size: 35px;
+            }
           }
           .headerMainText {
             color: gray;
-            font-size: 13px;
+            font-size: 15px;
           }
           .headerButtons {
             display: flex;
             gap: 10px;
             a {
+              max-width: 200px;
+              width: 100%;
+              text-align: center;
               padding: 10px 15px;
               border-radius: 10px;
               &.buttonGetStarted {
                 color: white;
                 background: #038945;
+                max-width: 230px;
               }
               &.buttonExploreFeatures {
+                max-width: 200px;
                 background: white;
                 border: 1px solid gray;
               }
@@ -51,12 +59,13 @@
             .skillsEachSkills {
               @include disFlex(5px);
               color: rgb(57, 57, 57);
-
               .eachSkilIcon {
-                background: #e7fce6;
+                @include disFlex();
                 border-radius: 50%;
-                padding: 3px 6px;
-                color: #0a3810;
+                background: #109450;
+                color: white;
+                width: 30px;
+                height: 30px;
               }
             }
           }
@@ -70,7 +79,7 @@
       }
       .features {
         background: #ebf9f5;
-        padding: 20px 10px;
+        padding: 40px 10px;
         @include displayFlex_col(20px);
         .featuresTitles {
           @include displayFlex_col(10px);
@@ -79,11 +88,7 @@
             @include mainTitleStyles();
           }
           .titleMiddle {
-            font-size: 25px;
-            font-weight: bold;
-            span {
-              color: #109450;
-            }
+            @include mainh2Styles();
           }
           .titleBottom {
             color: rgb(57, 57, 57);
@@ -130,7 +135,7 @@
       }
       .steps {
         display: flex;
-        padding: 25px 10px;
+        padding: 55px 10px;
         justify-content: center;
         gap: 35px;
         .stepsInfo {
@@ -219,6 +224,7 @@
       .dashView {
         background: #ebf9f5;
         @include disFlex(30px);
+        padding: 25px 10px;
         .dashContent {
           @include displayFlex_col(10px);
           align-items: flex-start;
@@ -228,11 +234,7 @@
             @include mainTitleStyles();
           }
           .descOne {
-            font-weight: bold;
-            font-size: 24px;
-            span {
-              color: #109450;
-            }
+            @include mainh2Styles();
           }
           .descTwo {
             color: rgb(57, 57, 57);
@@ -265,16 +267,13 @@
       }
       .benefits {
         @include displayFlex_col(10px);
-        padding: 25px 10px;
+        padding: 35px 10px;
+        border-bottom: 1px solid gray;
         .benefitsTitles {
           @include displayFlex_col(4px);
           align-items: center;
           .mainTItle {
-            font-weight: bold;
-            font-size: 24px;
-            span {
-              color: #109450;
-            }
+            @include mainh2Styles();
           }
           .benefitsDesc {
             color: rgb(57, 57, 57);
@@ -311,6 +310,109 @@
                 color: rgb(57, 57, 57);
               }
             }
+          }
+        }
+      }
+      .faq {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding: 30px 15px;
+        .faqLeft {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          img {
+            width: 170px;
+            height: 150px;
+            object-fit: contain;
+          }
+          .leftTitleBox {
+            @include displayFlex_col(4px);
+            p {
+              @include mainh2Styles();
+              span {
+                display: block;
+              }
+            }
+            span {
+              color: rgb(57, 57, 57);
+              max-width: 320px;
+            }
+          }
+        }
+        .faqList {
+          flex: 1;
+          min-width: 0;
+          @include displayFlex_col(8px);
+          .faqEachItem {
+            border: 1px solid gray;
+            border-radius: 10px;
+            overflow: hidden;
+            h3 {
+              .faqQuestion {
+                width: 100%;
+                min-height: 42px;
+                padding: 10px 15px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 15px;
+                border: none;
+                background: white;
+                cursor: pointer;
+                span {
+                  font-weight: bold;
+                }
+                &:hover {
+                  background: #f8fcf9;
+                }
+                &:focus-visible {
+                  outline: 2px solid #16a34a;
+                  outline-offset: -3px;
+                }
+              }
+            }
+            .faqAnswer {
+              border-top: 1px solid #e5e7eb;
+              padding: 12px 15px;
+              background: #f8fcf9;
+              p {
+                color: rgb(57, 57, 57);
+                line-height: 1.5;
+              }
+            }
+          }
+        }
+      }
+      .banner {
+        background-image: url("../../assets/fintrackBanner.png");
+        background-size: cover;
+        background-position: end;
+        background-repeat: no-repeat;
+        height: 100px;
+        border-radius: 10px;
+        @include disFlex(20px);
+        justify-content: space-evenly;
+        .bannerText {
+          @include displayFlex_col(8px);
+          color: white;
+          p {
+            font-size: 25px;
+          }
+        }
+        a {
+          background: white;
+          color: #16a34a;
+          font-weight: bold;
+          border-radius: 10px;
+          border: 1px solid #16a34a;
+          max-width: 300px;
+          width: 100%;
+          padding: 10px;
+          text-align: center;
+          svg {
+            vertical-align: middle;
           }
         }
       }

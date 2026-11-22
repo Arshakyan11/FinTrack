@@ -57,3 +57,11 @@
   font-weight: bold;
   text-transform: uppercase;
 }
+
+@mixin mainh2Styles {
+  font-size: 25px;
+  font-weight: bold;
+  span {
+    color: #109450;
+  }
+}

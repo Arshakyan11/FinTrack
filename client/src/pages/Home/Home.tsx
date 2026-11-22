@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { ROUTES } from "../../routes/Route";
 import {
   FintrackDashImg,
+  FIntrackQuestions,
   FintrackSecondDash,
   FintrackStepsImg,
 } from "../../assets/images";
@@ -11,9 +12,13 @@ import {
   eachstepsData,
   dashboardPreviewData,
   benefitsData,
+  faqDataHome,
+  heroHighlightsData,
 } from "../../data/manyData";
-import { Check } from "lucide-react";
+import { Check, ChevronDown, ChevronUp, MoveRight } from "lucide-react";
+import { useState } from "react";
 const Home = () => {
+  const [activeFaq, setActiveFaq] = useState<string | null>(null);
   return (
     <section className={styles.homeSec}>
       <div className={styles.container}>
@@ -47,20 +52,16 @@ const Home = () => {
                   Explore Features
                 </Link>
               </div>
-              <div className={styles.header_skiils}>
-                <div className={styles.skillsEachSkills}>
-                  <p className={styles.eachSkilIcon}>+</p>
-                  <p>Free to use</p>
-                </div>
-                <div className={styles.skillsEachSkills}>
-                  <p className={styles.eachSkilIcon}>+</p>
-                  <p>Easy to set up</p>
-                </div>
-                <div className={styles.skillsEachSkills}>
-                  <p className={styles.eachSkilIcon}>+</p>
-                  <p>Track your goals</p>
-                </div>
-              </div>
+              <ul className={styles.header_skiils}>
+                {heroHighlightsData.map((each) => (
+                  <li className={styles.skillsEachSkills} key={each.id}>
+                    <p className={styles.eachSkilIcon}>
+                      <Check size={17} strokeWidth={3} />
+                    </p>
+                    <p>{each.text}</p>
+                  </li>
+                ))}
+              </ul>
             </div>
             <div className={styles.headerRight}>
               <img
@@ -164,7 +165,7 @@ const Home = () => {
                 const Icon = each.icon;
                 return (
                   <div className={styles.eachBenefit} key={each.id}>
-                    <span className={styles.benefitIcon}>  
+                    <span className={styles.benefitIcon}>
                       <Icon size={26} strokeWidth={3} />
                     </span>
                     <div className={styles.eachBenefitInfo}>
@@ -175,6 +176,66 @@ const Home = () => {
                 );
               })}
             </div>
+          </div>
+          <div className={styles.faq}>
+            <div className={styles.faqLeft}>
+              <img src={FIntrackQuestions} alt="questions image" />
+              <div className={styles.leftTitleBox}>
+                <p>
+                  Frequently Asked
+                  <span>Questions</span>
+                </p>
+                <span>
+                  Find answers to the most common questions about FinTrack.
+                </span>
+              </div>
+            </div>
+            <div className={styles.faqList}>
+              {faqDataHome.map((each) => {
+                const isOpen = activeFaq === each.id;
+                return (
+                  <div key={each.id} className={styles.faqEachItem}>
+                    <h3>
+                      <button
+                        type="button"
+                        className={styles.faqQuestion}
+                        onClick={() => setActiveFaq(isOpen ? null : each.id)}
+                      >
+                        <span>{each.question}</span>
+                        {isOpen ? (
+                          <ChevronUp
+                            color="#16a34a"
+                            className={styles.chevron}
+                          />
+                        ) : (
+                          <ChevronDown
+                            color="#16a34a"
+                            className={styles.chevron}
+                          />
+                        )}
+                      </button>
+                    </h3>
+                    {isOpen && (
+                      <div className={styles.faqAnswer}>
+                        <p>{each.answer}</p>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div className={styles.banner}>
+            <div className={styles.bannerText}>
+              <p>Your financial journey starts here.</p>
+              <span>
+                Take the first step towards better financial management with
+                FinTrack.
+              </span>
+            </div>
+            <Link to={ROUTES.REGISTRATION}>
+              Create Your Free Account <MoveRight color="#16a34a" />
+            </Link>
           </div>
         </div>
       </div>

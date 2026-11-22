@@ -1,0 +1,67 @@
+@use "../../styles/globalIndex.scss" as *;
+
+.faqSec {
+  .container {
+    max-width: 1440px;
+    margin: auto;
+    .faq {
+      .faqHeader {
+        background: #ebf9f5;
+        @include disFlex(5px);
+        .headerLeft {
+          @include displayFlex_col(10px);
+          padding: 4px 6px;
+          .headerTitle {
+            @include mainTitleStyles();
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            max-width: 220px;
+          }
+          .headerSubTitle {
+            @include mainh2Styles();
+          }
+          .headerDesc {
+            color: rgb(57, 57, 57);
+          }
+        }
+        .headerImg {
+          max-width: 500px;
+          width: 100%;
+        }
+      }
+      .supportItems {
+        display: grid;
+        padding: 30px;
+        gap: 30px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        border-bottom: 1px solid gray;
+        .eachItem {
+          @include disFlex(15px);
+          align-items: flex-start;
+          span {
+            @include disFlex();
+            background: #e7fce6;
+            width: 60px;
+            height: 60px;
+            border-radius: 20px;
+          }
+          .eachItemTextBox {
+            @include displayFlex_col(5px);
+            padding-top: 2px;
+            .textTitle {
+              font-weight: bold;
+            }
+            .textDesc {
+              color: rgb(57, 57, 57);
+              font-size: 13px;
+            }
+          }
+          &:not(:last-child) {
+            border-right: 1px solid gray;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,12 +1,8 @@
 import { Route, Routes } from "react-router";
 import "./App.scss";
 import LayOut from "./LayOut/LayOut";
-import Login from "./pages/Login/Login";
-import Registration from "./pages/Registration/Registration";
-import Dashboard from "./pages/Dashboard/Dashboard";
 import { ROUTES } from "./routes/Route";
-import Home from "./pages/Home/Home";
-
+import { Login, Registration, Dashboard, Home, Faq } from "./pages";
 function App() {
   return (
     <>
@@ -16,6 +12,7 @@ function App() {
           <Route path={ROUTES.HOME} element={<Home />} />
           <Route path={ROUTES.REGISTRATION} element={<Registration />} />
           <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
+          <Route path={ROUTES.FAQ} element={<Faq />} />
         </Route>
       </Routes>
     </>
